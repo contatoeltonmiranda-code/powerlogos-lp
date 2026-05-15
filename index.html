@@ -1361,6 +1361,23 @@
     filter: grayscale(0%) brightness(1);
   }
   .team-card.featured .team-photo { aspect-ratio: 4/5; }
+  .team-photo-placeholder {
+    background: linear-gradient(135deg, #1f1d10 0%, #0a0a0a 100%);
+    border: 1px dashed rgba(255,214,10,0.18);
+  }
+  .team-photo-initials {
+    position: relative;
+    z-index: 1;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(36px, 5vw, 56px);
+    letter-spacing: 0.04em;
+    background: linear-gradient(135deg, #FFD60A 0%, #FFB800 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 4px 18px rgba(255,214,10,0.12);
+  }
   .team-card h3 { margin-bottom: 4px; font-size: 18px; }
   .team-role {
     font-size: 13px;
@@ -3120,39 +3137,39 @@
       </div>
 
       <div class="team-card">
-        <div class="team-photo">
-          <img src="https://i.pravatar.cc/300?img=47" alt="Mariana Costa, Designer da PowerLogos" loading="lazy">
+        <div class="team-photo team-photo-placeholder">
+          <div class="team-photo-initials" aria-hidden="true">JS</div>
         </div>
-        <h3>Mariana Costa</h3>
-        <div class="team-role">Designer</div>
-        <p class="team-bio">[Bio placeholder] Direção de arte e design visual. Cuida da identidade gráfica das campanhas e dos materiais entregues aos clientes. <em>(a confirmar com cliente)</em></p>
+        <h3>João Sousa</h3>
+        <div class="team-role">Business Development</div>
+        <p class="team-bio">Responsável pela expansão estratégica e desenvolvimento de parcerias. Formação avançada em Gestão pelo ISCTE Business School.</p>
       </div>
 
       <div class="team-card">
-        <div class="team-photo">
-          <img src="https://i.pravatar.cc/300?img=12" alt="André Ferreira, Account Manager da PowerLogos" loading="lazy">
+        <div class="team-photo team-photo-placeholder">
+          <div class="team-photo-initials" aria-hidden="true">MC</div>
         </div>
-        <h3>André Ferreira</h3>
-        <div class="team-role">Account Manager</div>
-        <p class="team-bio">[Bio placeholder] Ponto de contacto direto com o cliente. Garante alinhamento estratégico e ritmo de execução em cada conta. <em>(a confirmar com cliente)</em></p>
+        <h3>Margarida Cautela</h3>
+        <div class="team-role">Creative Strategist</div>
+        <p class="team-bio">Lidera estratégia criativa e comunicação visual. Formação em Fotografia e Design, com foco em conteúdos que reforçam posicionamento de marca.</p>
       </div>
 
       <div class="team-card">
-        <div class="team-photo">
-          <img src="https://i.pravatar.cc/300?img=44" alt="Sofia Mendes, Copywriter da PowerLogos" loading="lazy">
+        <div class="team-photo team-photo-placeholder">
+          <div class="team-photo-initials" aria-hidden="true">AD</div>
         </div>
-        <h3>Sofia Mendes</h3>
-        <div class="team-role">Copywriter</div>
-        <p class="team-bio">[Bio placeholder] Escreve anúncios e textos persuasivos para as campanhas de Google Ads e Meta Ads. <em>(a confirmar com cliente)</em></p>
+        <h3>Artur Dinis "Catfish"</h3>
+        <div class="team-role">Influencer Marketing Strategist</div>
+        <p class="team-bio">Especialista em estratégia de conteúdo e campanhas digitais. Coordena equipas criativas e marketing de influência alinhado a performance.</p>
       </div>
 
       <div class="team-card">
-        <div class="team-photo">
-          <img src="https://i.pravatar.cc/300?img=33" alt="Ricardo Almeida, Social Media Manager da PowerLogos" loading="lazy">
+        <div class="team-photo team-photo-placeholder">
+          <div class="team-photo-initials" aria-hidden="true">MN</div>
         </div>
-        <h3>Ricardo Almeida</h3>
-        <div class="team-role">Social Media Manager</div>
-        <p class="team-bio">[Bio placeholder] Gere a presença das marcas nas redes sociais e coordena calendarios editoriais. <em>(a confirmar com cliente)</em></p>
+        <h3>Mariana Sá Nogueira</h3>
+        <div class="team-role">Finance Manager</div>
+        <p class="team-bio">Responsável pela gestão financeira da PowerLogos. Formação em Contabilidade pelo ISCAL, garante controlo e sustentabilidade das operações.</p>
       </div>
     </div>
 
