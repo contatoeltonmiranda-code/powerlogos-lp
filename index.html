@@ -2312,6 +2312,70 @@
     position: relative; height: 78px; margin-bottom: 14px;
   }
   .case-line-chart svg { width: 100%; height: 100%; }
+  .case-donut {
+    position: relative;
+    height: 110px; margin-bottom: 14px;
+    display: flex; align-items: center; justify-content: center; gap: 16px;
+  }
+  .case-donut .donut-wrap {
+    position: relative;
+    width: 110px; height: 110px;
+    flex-shrink: 0;
+  }
+  .case-donut svg {
+    width: 110px; height: 110px;
+    transform: rotate(-90deg);
+    filter: drop-shadow(0 0 8px rgba(255,214,10,0.25));
+  }
+  .case-donut .donut-track { fill: none; stroke: #1c1c20; stroke-width: 10; }
+  .case-donut .donut-progress {
+    fill: none;
+    stroke: url(#donut-grad);
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 251.3;
+    stroke-dashoffset: 60.3;
+    animation: donutFill 1.6s ease-out forwards;
+  }
+  @keyframes donutFill {
+    from { stroke-dashoffset: 251.3; }
+    to { stroke-dashoffset: 60.3; }
+  }
+  .case-donut .donut-center {
+    position: absolute;
+    inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    pointer-events: none;
+  }
+  .case-donut .donut-center .dc-num {
+    font-size: 22px; font-weight: 800;
+    background: var(--grad-text-yellow);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    line-height: 1;
+  }
+  .case-donut .donut-center .dc-label {
+    font-size: 8px; color: var(--muted-soft);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-top: 3px;
+  }
+  .case-donut .donut-legend {
+    display: flex; flex-direction: column; gap: 8px;
+    flex: 1; max-width: 130px;
+  }
+  .case-donut .dl-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 10px; color: var(--text);
+  }
+  .case-donut .dl-dot {
+    width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0;
+  }
+  .case-donut .dl-dot.yellow { background: #FFD60A; box-shadow: 0 0 6px rgba(255,214,10,0.5); }
+  .case-donut .dl-dot.muted { background: #2a2a30; }
+  .case-donut .dl-text { display: flex; flex-direction: column; line-height: 1.2; }
+  .case-donut .dl-val { font-weight: 700; color: var(--text); font-size: 11px; }
+  .case-donut .dl-name { color: var(--muted-soft); font-size: 9px; text-transform: uppercase; letter-spacing: 0.05em; }
   .case-mockup-stats {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
     padding-top: 12px; border-top: 1px solid #1c1c20;
@@ -2884,21 +2948,36 @@
         <div class="case-mockup">
           <div class="case-mockup-inner">
             <div class="case-mockup-header">
-              <span class="case-mockup-title">Marcações / 60 dias</span>
-              <span class="case-mockup-pill">+96</span>
+              <span class="case-mockup-title">Taxa de Conversão</span>
+              <span class="case-mockup-pill">76%</span>
             </div>
-            <div class="case-line-chart" aria-hidden="true">
-              <svg viewBox="0 0 280 78" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="line-grad-3" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#FFE970" stop-opacity="0.4"/>
-                    <stop offset="100%" stop-color="#FFC700" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <path d="M0,70 L40,64 L80,55 L120,42 L160,32 L200,22 L240,14 L280,8 L280,78 L0,78 Z" fill="url(#line-grad-3)"/>
-                <path d="M0,70 L40,64 L80,55 L120,42 L160,32 L200,22 L240,14 L280,8" fill="none" stroke="#FFD60A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="280" cy="8" r="3" fill="#FFE970"/>
-              </svg>
+            <div class="case-donut" aria-hidden="true">
+              <div class="donut-wrap">
+                <svg viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="donut-grad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#FFE970"/>
+                      <stop offset="100%" stop-color="#FFC700"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="donut-track" cx="50" cy="50" r="40"/>
+                  <circle class="donut-progress" cx="50" cy="50" r="40"/>
+                </svg>
+                <div class="donut-center">
+                  <div class="dc-num">76%</div>
+                  <div class="dc-label">Conversão</div>
+                </div>
+              </div>
+              <div class="donut-legend">
+                <div class="dl-item">
+                  <span class="dl-dot yellow"></span>
+                  <div class="dl-text"><span class="dl-val">+96</span><span class="dl-name">Marcações</span></div>
+                </div>
+                <div class="dl-item">
+                  <span class="dl-dot muted"></span>
+                  <div class="dl-text"><span class="dl-val">126</span><span class="dl-name">Leads totais</span></div>
+                </div>
+              </div>
             </div>
             <div class="case-mockup-stats">
               <div class="ms"><div class="ms-num">+96</div><div class="ms-label">Marcações</div></div>
