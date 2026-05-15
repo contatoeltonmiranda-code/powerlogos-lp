@@ -312,7 +312,7 @@
   }
   .header-inner {
     display: flex; align-items: center; justify-content: space-between;
-    height: 72px;
+    height: 88px;
   }
   .logo {
     font-weight: 800;
@@ -328,9 +328,10 @@
     color: transparent;
   }
   .logo img {
-    height: 32px;
+    height: 52px;
     width: auto;
     display: block;
+    filter: drop-shadow(0 4px 18px rgba(255,214,10,0.18));
   }
   .footer-brand .logo img {
     height: 40px;
@@ -1810,27 +1811,105 @@
     margin-top: 4px;
   }
 
-  /* ===== PARTNER LOGOS (footer) ===== */
-  .partner-logos-row {
+  /* ===== PARTNER BADGES (footer) ===== */
+  .footer-partners {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 14px;
     flex-wrap: wrap;
-    margin-top: 14px;
+    margin-top: 18px;
   }
-  .partner-logos-row img {
-    height: 36px;
-    width: auto;
-    object-fit: contain;
+  .footer-partner-badge {
     background: #fff;
-    padding: 6px 10px;
-    border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    opacity: 0.95;
-    transition: opacity .25s ease, transform .25s ease;
+    border-radius: 12px;
+    padding: 12px 16px;
+    min-height: 72px;
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,214,10,0.06);
+    transition: transform .25s ease, box-shadow .25s ease;
   }
-  .partner-logos-row img:hover { opacity: 1; transform: translateY(-2px); }
+  .footer-partner-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(255,214,10,0.18);
+  }
+  .footer-partner-badge img {
+    max-height: 48px;
+    max-width: 110px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+
+  /* ===== PARCEIROS OFICIAIS (faixa premium) ===== */
+  .partners-strip {
+    padding: 80px 0 60px;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+    position: relative;
+  }
+  .partners-strip-head {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .partners-strip-label {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .partners-strip-sub {
+    display: block;
+    font-size: 15px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .partners-strip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  .partner-badge {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 130px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,214,10,0.08);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .partner-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(255,214,10,0.18);
+  }
+  .partner-badge img {
+    max-height: 90px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+  @media (max-width: 720px) {
+    .partners-strip { padding: 56px 0 44px; }
+    .partners-strip-grid { grid-template-columns: 1fr; gap: 16px; max-width: 360px; }
+    .partner-badge { min-height: 110px; padding: 18px 22px; }
+    .partner-badge img { max-height: 70px; }
+  }
 
   /* ===== RESPONSIVE ===== */
   @media (max-width: 1024px) {
@@ -2332,7 +2411,6 @@
   <div class="glow-orb-yellow orb-hero" aria-hidden="true"></div>
   <img class="hero-bg" src="assets/hero/prancheta-1.png" alt="" aria-hidden="true" loading="eager">
   <div class="container hero-inner">
-    <img class="hero-logo-mark" src="assets/logos/powerlogos.png" alt="PowerLogos">
     <h1>Transformamos o seu investimento em anúncios em <span class="accent">clientes reais</span>.</h1>
     <p class="hero-lead">A PowerLogos desenha e gere campanhas de Google Ads e Meta Ads focadas em gerar leads qualificados. Com acompanhamento contínuo e métricas claras de retorno.</p>
     <div class="hero-ctas">
@@ -2342,12 +2420,6 @@
         <div class="inner">Agendar Reunião Estratégica <span class="btn-arrow">→</span></div>
       </a>
       <a href="#servicos" class="btn btn-secondary">Ver Serviços</a>
-    </div>
-    <div class="hero-partners" aria-label="Parceiros oficiais">
-      <span class="partner-label">Parceiros oficiais</span>
-      <img src="assets/badges/google.png" alt="Google Partner" loading="lazy">
-      <img src="assets/badges/meta.png" alt="Meta Business Partner" loading="lazy">
-      <img src="assets/badges/tiktok.png" alt="TikTok Marketing Partner" loading="lazy">
     </div>
     <div class="hero-social-proof">
       <div class="avatar-stack">
@@ -2380,6 +2452,28 @@
     </div>
   </div>
   <div class="hero-bottom-border" aria-hidden="true"></div>
+</section>
+
+
+<!-- ===== PARCEIROS OFICIAIS (faixa premium) ===== -->
+<section class="partners-strip" aria-label="Parceiros oficiais">
+  <div class="container">
+    <div class="partners-strip-head">
+      <span class="partners-strip-label">Parceiros Oficiais</span>
+      <span class="partners-strip-sub">Reconhecidos pelas maiores plataformas de publicidade digital</span>
+    </div>
+    <div class="partners-strip-grid">
+      <div class="partner-badge">
+        <img src="assets/badges/google-original.png" alt="Google Partner" loading="lazy">
+      </div>
+      <div class="partner-badge">
+        <img src="assets/badges/meta-original.png" alt="Meta Business Partner" loading="lazy">
+      </div>
+      <div class="partner-badge">
+        <img src="assets/badges/tiktok-original.png" alt="TikTok Marketing Partner" loading="lazy">
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ===== PROBLEMA (02) ===== -->
@@ -3227,10 +3321,10 @@
       <div class="footer-brand">
         <div class="logo"><img src="assets/logos/powerlogos.png" alt="PowerLogos"></div>
         <p>Marketing Digital de Performance. Transformamos investimento em anúncios em clientes reais.</p>
-        <div class="partner-logos-row" aria-label="Certificações de parceria">
-          <img src="assets/logos/google-partner.png" alt="Google Partner" loading="lazy">
-          <img src="assets/logos/meta-partner.jpeg" alt="Meta Business Partner" loading="lazy">
-          <span class="badge">TikTok Partner</span>
+        <div class="footer-partners" aria-label="Certificacoes de parceria">
+          <div class="footer-partner-badge"><img src="assets/badges/google-original.png" alt="Google Partner" loading="lazy"></div>
+          <div class="footer-partner-badge"><img src="assets/badges/meta-original.png" alt="Meta Business Partner" loading="lazy"></div>
+          <div class="footer-partner-badge"><img src="assets/badges/tiktok-original.png" alt="TikTok Marketing Partner" loading="lazy"></div>
         </div>
       </div>
       <div class="footer-cols">
