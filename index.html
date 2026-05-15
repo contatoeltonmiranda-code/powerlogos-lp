@@ -1312,8 +1312,8 @@
   /* ===== EQUIPA ===== */
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
     margin-bottom: 28px;
   }
   .team-card {
@@ -1929,10 +1929,16 @@
   }
 
   /* ===== RESPONSIVE ===== */
+  @media (max-width: 1180px) {
+    .team-grid { grid-template-columns: repeat(4, 1fr); }
+  }
   @media (max-width: 1024px) {
     .problem-grid, .stats-grid, .metrics-grid, .method-grid { grid-template-columns: repeat(2, 1fr); }
     .services-grid, .video-grid, .reviews-grid { grid-template-columns: repeat(2, 1fr); }
-    .team-grid { grid-template-columns: 1fr 1fr; }
+    .team-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 760px) {
+    .team-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   }
   @media (max-width: 720px) {
     section { padding: 40px 0; }
@@ -3106,7 +3112,7 @@
         </div>
         <h3>João Duarte Luzia</h3>
         <div class="team-role">CEO &amp; Founder</div>
-        <p class="team-bio">15+ anos de experiência em marketing e desenvolvimento de negócios. Especializado em aquisição de clientes e estratégias de crescimento.</p>
+        <p class="team-bio">Fundador da PowerLogos. 15+ anos em marketing e desenvolvimento de negócios. Especializado em aquisição de clientes e posicionamento estratégico.</p>
       </div>
 
       <div class="team-card">
@@ -3115,7 +3121,7 @@
         </div>
         <h3>Rita Garcia</h3>
         <div class="team-role">COO</div>
-        <p class="team-bio">Lidera a operação e garante execução eficiente. 10+ anos em negócios digitais.</p>
+        <p class="team-bio">Lidera a operação da PowerLogos. 10+ anos em negócios digitais, ajudando empresas a estruturar crescimento sustentável.</p>
       </div>
 
       <div class="team-card">
@@ -3124,7 +3130,34 @@
         </div>
         <h3>Pedro Simões</h3>
         <div class="team-role">CFO</div>
-        <p class="team-bio">Ex-Senior Consultant na Deloitte. Garante sustentabilidade financeira e decisões orientadas a crescimento.</p>
+        <p class="team-bio">Ex-Senior Consultant na Deloitte. Lidera a área financeira e estratégica, garantindo decisões sustentadas e orientadas a crescimento.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="assets/equipa/joao-sousa.jpg" alt="João Sousa, Business Development da PowerLogos" loading="lazy">
+        </div>
+        <h3>João Sousa</h3>
+        <div class="team-role">Business Development</div>
+        <p class="team-bio">Formação em Gestão pelo ISCTE Business School. Responsável pela expansão estratégica e desenvolvimento de parcerias de elevado valor.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="assets/equipa/margarida.jpg" alt="Margarida Cautela, Creative Strategist da PowerLogos" loading="lazy">
+        </div>
+        <h3>Margarida Cautela</h3>
+        <div class="team-role">Creative Strategist</div>
+        <p class="team-bio">Formação em Fotografia e Design. Lidera estratégia criativa e comunicação visual, garantindo consistência e impacto em todas as plataformas.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="assets/equipa/artur.jpg" alt="Artur Dinis &quot;Catfish&quot;, Influencer Marketing Strategist da PowerLogos" loading="lazy">
+        </div>
+        <h3>Artur Dinis &ldquo;Catfish&rdquo;</h3>
+        <div class="team-role">Influencer Marketing</div>
+        <p class="team-bio">Especialista em estratégia de conteúdo e marketing de influência. Coordena equipas criativas e campanhas alinhadas a performance.</p>
       </div>
 
       <div class="team-card">
@@ -3133,43 +3166,34 @@
         </div>
         <h3>Thiago Rosa</h3>
         <div class="team-role">Performance Marketing</div>
-        <p class="team-bio">Especialista em Google Ads e Meta Ads. Campanhas orientadas para geração de leads e maximização de retorno.</p>
+        <p class="team-bio">Especialista em Google Ads e Meta Ads. Campanhas orientadas a geração de leads e maximização de ROI, totalmente baseadas em dados.</p>
       </div>
 
       <div class="team-card">
-        <div class="team-photo team-photo-placeholder">
-          <div class="team-photo-initials" aria-hidden="true">JS</div>
-        </div>
-        <h3>João Sousa</h3>
-        <div class="team-role">Business Development</div>
-        <p class="team-bio">Responsável pela expansão estratégica e desenvolvimento de parcerias. Formação avançada em Gestão pelo ISCTE Business School.</p>
-      </div>
-
-      <div class="team-card">
-        <div class="team-photo team-photo-placeholder">
-          <div class="team-photo-initials" aria-hidden="true">MC</div>
-        </div>
-        <h3>Margarida Cautela</h3>
-        <div class="team-role">Creative Strategist</div>
-        <p class="team-bio">Lidera estratégia criativa e comunicação visual. Formação em Fotografia e Design, com foco em conteúdos que reforçam posicionamento de marca.</p>
-      </div>
-
-      <div class="team-card">
-        <div class="team-photo team-photo-placeholder">
-          <div class="team-photo-initials" aria-hidden="true">AD</div>
-        </div>
-        <h3>Artur Dinis "Catfish"</h3>
-        <div class="team-role">Influencer Marketing Strategist</div>
-        <p class="team-bio">Especialista em estratégia de conteúdo e campanhas digitais. Coordena equipas criativas e marketing de influência alinhado a performance.</p>
-      </div>
-
-      <div class="team-card">
-        <div class="team-photo team-photo-placeholder">
-          <div class="team-photo-initials" aria-hidden="true">MN</div>
+        <div class="team-photo">
+          <img src="assets/equipa/mariana.jpg" alt="Mariana Sá Nogueira, Finance Manager da PowerLogos" loading="lazy">
         </div>
         <h3>Mariana Sá Nogueira</h3>
         <div class="team-role">Finance Manager</div>
-        <p class="team-bio">Responsável pela gestão financeira da PowerLogos. Formação em Contabilidade pelo ISCAL, garante controlo e sustentabilidade das operações.</p>
+        <p class="team-bio">Formação em Contabilidade pelo ISCAL. Responsável pela gestão financeira, garante controlo e sustentabilidade das operações.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="assets/equipa/jp-santos.jpg" alt="J.P. Santos, Senior Brand Designer da PowerLogos" loading="lazy">
+        </div>
+        <h3>J.P. Santos</h3>
+        <div class="team-role">Senior Brand Designer</div>
+        <p class="team-bio">12+ anos em branding e design. Formação pelo IADE. Combina criatividade e estratégia para desenvolver marcas com impacto visual.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="assets/equipa/miguel.jpg" alt="Miguel Pimentel, Web Designer & UX Specialist da PowerLogos" loading="lazy">
+        </div>
+        <h3>Miguel Pimentel</h3>
+        <div class="team-role">Web Designer &amp; UX</div>
+        <p class="team-bio">Formação em Design pelo IADE. Cria interfaces intuitivas e orientadas para conversão, potenciando resultados de negócio.</p>
       </div>
     </div>
 
