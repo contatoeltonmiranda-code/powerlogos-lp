@@ -1293,6 +1293,57 @@
     font-weight: 600;
   }
 
+  /* Clientes reais — marquee scrolling */
+  .clients-marquee {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  }
+  .clients-marquee + .clients-marquee { margin-top: 32px; }
+  .clients-track {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    width: max-content;
+    animation: clientsScroll 60s linear infinite;
+  }
+  .clients-marquee.reverse .clients-track {
+    animation-direction: reverse;
+    animation-duration: 70s;
+  }
+  .clients-track:hover { animation-play-state: paused; }
+  .client-logo {
+    flex: 0 0 auto;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.72;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .client-logo:hover { opacity: 1; transform: scale(1.05); }
+  .client-logo img {
+    max-height: 56px;
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
+  }
+  @keyframes clientsScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @media (max-width: 768px) {
+    .client-logo { height: 40px; }
+    .client-logo img { max-height: 40px; max-width: 130px; }
+    .clients-track { gap: 44px; animation-duration: 45s; }
+    .clients-marquee.reverse .clients-track { animation-duration: 55s; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .clients-track { animation: none; }
+  }
+
   /* ===== COMPARACAO ===== */
   .why-grid {
     display: grid;
@@ -3228,14 +3279,74 @@
 
     <div class="logos-block">
       <h3 style="font-size:20px;text-align:center;margin-bottom:8px;">Empresas que já confiam na PowerLogos</h3>
-      <p class="small" style="text-align:center;color:var(--muted);margin-bottom:24px;">Trabalhamos com marcas que levam o crescimento a sério.</p>
-      <p style="text-align:center;color:var(--muted-soft);font-size:13px;font-style:italic;margin-bottom:20px;">[Logos de clientes reais — a solicitar ao João]</p>
-      <div class="logos-row">
-        <div class="logo-placeholder">LOGO 1</div>
-        <div class="logo-placeholder">LOGO 2</div>
-        <div class="logo-placeholder">LOGO 3</div>
-        <div class="logo-placeholder">LOGO 4</div>
-        <div class="logo-placeholder">LOGO 5</div>
+      <p class="small" style="text-align:center;color:var(--muted);margin-bottom:32px;">Trabalhamos com marcas que levam o crescimento a sério.</p>
+      <div class="clients-marquee" aria-label="Clientes PowerLogos">
+        <div class="clients-track">
+          <div class="client-logo"><img src="assets/logos-clientes/20.png" alt="Cliente PowerLogos" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/15.png" alt="Cliente PowerLogos" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/11.png" alt="Cliente PowerLogos" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/27.png" alt="Cliente PowerLogos" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/23.png" alt="Cliente PowerLogos" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/7.png" alt="Cliente PowerLogos" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/6.png" alt="Cliente PowerLogos" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/13.png" alt="Cliente PowerLogos" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/12.png" alt="Cliente PowerLogos" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/16.png" alt="Cliente PowerLogos" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/10.png" alt="Cliente PowerLogos" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/26.png" alt="Cliente PowerLogos" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/30.png" alt="Cliente PowerLogos" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/22.png" alt="Cliente PowerLogos" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/17.png" alt="Cliente PowerLogos" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/20.png" alt="" loading="lazy" aria-hidden="true"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/15.png" alt="" loading="lazy" aria-hidden="true"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/11.png" alt="" loading="lazy" aria-hidden="true"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/27.png" alt="" loading="lazy" aria-hidden="true"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/23.png" alt="" loading="lazy" aria-hidden="true"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/7.png" alt="" loading="lazy" aria-hidden="true"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/6.png" alt="" loading="lazy" aria-hidden="true"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/13.png" alt="" loading="lazy" aria-hidden="true"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/12.png" alt="" loading="lazy" aria-hidden="true"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/16.png" alt="" loading="lazy" aria-hidden="true"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/10.png" alt="" loading="lazy" aria-hidden="true"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/26.png" alt="" loading="lazy" aria-hidden="true"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/30.png" alt="" loading="lazy" aria-hidden="true"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/22.png" alt="" loading="lazy" aria-hidden="true"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/17.png" alt="" loading="lazy" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="clients-marquee reverse" aria-hidden="true">
+        <div class="clients-track">
+          <div class="client-logo"><img src="assets/logos-clientes/28.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/2.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/14.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/19.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/3.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/18.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/29.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/5.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/25.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/8.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/9.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/24.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/1.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/4.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/21.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/28.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/2.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/14.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/19.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/3.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/18.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/29.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/5.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/25.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/8.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/9.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/24.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/1.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/4.png" alt="" loading="lazy"></div>
+          <div class="client-logo"><img src="assets/logos-clientes/21.png" alt="" loading="lazy"></div>
+        </div>
       </div>
     </div>
   </div>
